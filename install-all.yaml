@@ -1,0 +1,132 @@
+- hosts: localhost
+  become: true
+  vars:
+    user: andre
+    dotfiles_repo: https://github.com/Idzu/dotfiles.git
+    dotfiles_path: '/home/{{ user }}/dotfiles'
+    aur_packages:
+      - vivaldi
+      - vivaldi-ffmpeg-codecs
+      - visual-studio-code-bin
+      - postman-bin
+      - github-desktop-bin
+      - figma-linux
+      - discord
+      - alacritty
+      - ranger
+      - neovim
+      - qbittorrent
+      - btop
+      - fd
+      - mcfly
+      - cheat
+      - zoxide
+
+  tasks:
+    - name: Обновить pacman и установить базовые пакеты
+      pacman:
+        name:
+          - git
+          - base-devel
+          - zsh
+          - curl
+          - tmux
+          - nginx
+          - nodejs
+          - npm
+          - stow
+        state: present
+        update_cache: yes
+
+    - name: Клонировать yay (если не установлен)
+      become_user: '{{ user }}'
+      git:
+        repo: https://aur.archlinux.org/yay.git
+        dest: '/home/{{ user }}/yay'
+        update: yes
+      register: yay_clone
+
+    - name: Сборка и установка yay
+      become_user: '{{ user }}'
+      command: makepkg -si --noconfirm
+      args:
+        chdir: '/home/{{ user }}/yay'
+      when: yay_clone.changed or not (ansible_facts.packages.yay is defined)
+
+    - name: Удалить каталог yay после установки
+      file:
+        path: '/home/{{ user }}/yay'
+        state: absent
+
+    - name: Клонировать dotfiles
+      become_user: '{{ user }}'
+      git:
+        repo: '{{ dotfiles_repo }}'
+        dest: '{{ dotfiles_path }}'
+        update: yes
+
+    - name: Запустить stow для dotfiles (все папки)
+      become_user: '{{ user }}'
+      shell: |
+        cd "{{ dotfiles_path }}"
+        stow *
+      args:
+        executable: /bin/bash
+
+    - name: Установить AUR пакеты через yay
+      become_user: '{{ user }}'
+      shell: |
+        yay -S --noconfirm {{ aur_packages | join(' ') }}
+      args:
+        executable: /bin/bash
+
+    - name: Установить Oh My Zsh, если нет
+      become_user: '{{ user }}'
+      shell: |
+        if [ ! -d "$HOME/.oh-my-zsh" ]; then
+          RUNZSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+        fi
+      args:
+        executable: /bin/bash
+
+    - name: Установить плагины zsh
+      become_user: '{{ user }}'
+      git:
+        repo: https://github.com/zsh-users/zsh-autosuggestions.git
+        dest: '/home/{{ user }}/.oh-my-zsh/custom/plugins/zsh-autosuggestions'
+        update: yes
+
+    - name: Установить плагины zsh-syntax-highlighting
+      become_user: '{{ user }}'
+      git:
+        repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
+        dest: '/home/{{ user }}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting'
+        update: yes
+
+    - name: Клонировать TPM (Tmux Plugin Manager)
+      become_user: '{{ user }}'
+      git:
+        repo: https://github.com/tmux-plugins/tpm
+        dest: '/home/{{ user }}/.tmux/plugins/tpm'
+        update: yes
+
+    - name: Создать .tmux.conf если отсутствует
+      become_user: '{{ user }}'
+      copy:
+        dest: '/home/{{ user }}/.tmux.conf'
+        content: |
+          set -g default-shell /bin/zsh
+          setw -g mouse on
+
+          set -g @plugin 'tmux-plugins/tpm'
+          set -g @plugin 'tmux-plugins/tmux-sensible'
+          set -g @plugin 'tmux-plugins/tmux-resurrect'
+
+          run '~/.tmux/plugins/tpm/tpm'
+      force: no
+
+    - name: Включить и запустить nginx
+      systemd:
+        name: nginx
+        enabled: yes
+        state: started
