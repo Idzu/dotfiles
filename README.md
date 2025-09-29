@@ -53,3 +53,4 @@ pacman -Qmq > aurlist.txt
 
 ## TODO
 - [ ] Добавить скрины GNOME
+- [ ] Конфиги для Alacritty, vscode
