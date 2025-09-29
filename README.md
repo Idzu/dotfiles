@@ -50,3 +50,6 @@ pacman -Qenq > pkglist.txt
 # Чтобы перечислить пакеты, установленные из AUR или сторонних репозиториев:
 pacman -Qmq > aurlist.txt
 ```
+
+## TODO
+- [ ] Добавить скрины GNOME
