@@ -114,6 +114,7 @@ linux612
 linux612-nvidia-open
 logrotate
 lollypop
+lutris
 lvm2
 malcontent
 man-db
@@ -153,6 +154,7 @@ nautilus-admin
 nautilus-empty-file
 nautilus-open-any-terminal
 nemo
+neovim
 network-manager-sstp
 networkmanager
 networkmanager-openconnect
@@ -178,6 +180,7 @@ pamac-gtk
 papirus-maia-icon-theme
 perl
 plymouth-theme-manjaro
+pngquant
 power-profiles-daemon
 qbittorrent
 qt5ct
@@ -212,9 +215,14 @@ usbutils
 vi
 vim
 vivaldi
+vulkan-tools
 webapp-manager
 wget
 which
+wine
+wine-gecko
+wine-mono
+winetricks
 wireless-regdb
 wpa_supplicant
 xfsprogs
