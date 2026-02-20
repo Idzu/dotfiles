@@ -50,6 +50,15 @@ pacman -Qenq > pkglist.txt
 # Чтобы перечислить пакеты, установленные из AUR или сторонних репозиториев:
 pacman -Qmq > aurlist.txt
 ```
+### GNOME
+```bash
+# Сохранить список расширений
+gnome-extensions list > desktop/gnome/extensions.txt
+# Сохранить список активных расширений
+gsettings get org.gnome.shell enabled-extensions > desktop/gnome/enabled-extensions.txt
+# Сохранить все настройки
+dconf dump / > desktop/gnome/gsettings.conf
+```
 
 ## TODO
 - [ ] Добавить скрины GNOME

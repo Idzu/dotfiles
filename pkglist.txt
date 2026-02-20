@@ -38,6 +38,7 @@ firefox
 flameshot
 fprintd
 fragments
+gamemode
 gdm
 glibc-locales
 gnome-backgrounds
@@ -85,6 +86,7 @@ grub-theme-manjaro
 gthumb
 gtksourceview-pkgbuild
 gufw
+guvcview
 gvfs
 gvfs-afc
 gvfs-dnssd
@@ -172,6 +174,7 @@ nvidia-prime
 nvidia-settings
 nvidia-utils
 nvm
+obs-studio
 obsidian
 openssh
 os-prober
@@ -199,6 +202,7 @@ sudo
 sushi
 sysfsutils
 system-config-printer
+telegram-desktop
 texinfo
 timeshift
 timeshift-autosnap-manjaro
@@ -212,7 +216,6 @@ unace
 unrar
 update-grub
 usbutils
-vi
 vim
 vivaldi
 vulkan-tools
