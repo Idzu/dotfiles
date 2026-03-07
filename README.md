@@ -65,5 +65,4 @@ dconf dump / > desktop/gnome/gsettings.conf
 ```
 
 ## TODO
-- [ ] Добавить скрины GNOME
-- [ ] Конфиги для Alacritty, vscode
+- Добавить конфиг для KDE
