@@ -29,6 +29,8 @@ rudesktop
 sing-geoip-db
 sing-geosite-db
 spotify
+spotube-bin
+telegram-desktop-bin
 termius
 vesktop-bin
 vi

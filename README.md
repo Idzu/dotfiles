@@ -4,6 +4,10 @@
 Поддерживаемые окружения:
 
 - GNOME (есть настройки и расширения)  
+![Desktop](assets/gnome/desktop.png)
+![Overview](assets/gnome/overview.png)
+![Overview](assets/gnome/terminal.png)
+
 - KDE (будет позже)  
 
 ## Структура
