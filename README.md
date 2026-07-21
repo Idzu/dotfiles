@@ -8,6 +8,11 @@
 ![Overview](assets/gnome/overview.png)
 ![Overview](assets/gnome/terminal.png)
 
+- Niri 
+![Desktop](assets/niri/desktop.png)
+![Overview](assets/niri/search.png)
+![Overview](assets/niri/terminal.png)
+
 - KDE (будет позже)  
 
 ## Структура
@@ -16,6 +21,7 @@
 - `/tmux` → `.tmux.conf`, `statusline.conf`, `utility.conf`  
 - `/desktop`
 	- `gnome` → gsettings и список расширений  
+	- `niri` → конфиги для Niri и NoctaliaShell
 - `/scripts` → вспомогательные скрипты  
 	- `install-gnome-extensions.sh` → устанавливает все расширения из списка
 
@@ -75,6 +81,29 @@ gnome-extensions list > desktop/gnome/extensions.txt
 gsettings get org.gnome.shell enabled-extensions > desktop/gnome/enabled-extensions.txt
 # Сохранить все настройки
 dconf dump / > desktop/gnome/gsettings.conf
+```
+
+## 2.2 Niri + Noctalia Shell
+
+```bash
+mkdir -p ~/.config/niri ~/.config/noctalia
+
+cp desktop/niri/config.kdl ~/.config/niri/
+cp -r desktop/niri/noctalia/* ~/.config/noctalia/
+```
+
+Перезапустить Niri:
+
+```bash
+niri msg action quit
+```
+
+или просто выйти из сессии и войти снова.
+
+Если Noctalia Shell не обновилась автоматически:
+
+```bash
+qs -c ~/.config/noctalia
 ```
 
 ## TODO
