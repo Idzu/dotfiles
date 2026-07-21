@@ -1,0 +1,151 @@
+{
+  "wallpapersFolder": "~/.local/share/Steam/steamapps/workshop/content/431960",
+  "iconColor": "none",
+  "enableExtraPropertiesEditor": true,
+  "defaultScaling": "fill",
+  "defaultClamp": "repeat",
+  "defaultFps": 30,
+  "defaultVolume": 100,
+  "defaultMuted": true,
+  "defaultAudioReactiveEffects": false,
+  "defaultNoAutomute": false,
+  "defaultDisableMouse": true,
+  "defaultDisableParallax": true,
+  "applyWallpaperColorsOnApply": false,
+  "wallpaperColorScreenshots": {
+    "eDP-1": {
+      "path": "/home/andre/.cache/noctalia/plugins/linux-wallpaperengine-controller/eDP-1-3695423784-theme-shot.png",
+      "wallpaperPath": "/home/andre/.local/share/Steam/steamapps/workshop/content/431960/3695423784",
+      "scaling": "default",
+      "updatedAt": 1779777905830
+    }
+  },
+  "defaultNoFullscreenPause": false,
+  "defaultFullscreenPauseOnlyActive": false,
+  "showSidebarDescription": false,
+  "badgeOrder": [
+    "type",
+    "dynamic",
+    "music",
+    "reactive",
+    "approved",
+    "resolution",
+    "compatibility"
+  ],
+  "badgeEnabled": {
+    "type": true,
+    "dynamic": true,
+    "music": true,
+    "reactive": true,
+    "approved": true,
+    "resolution": true,
+    "compatibility": true
+  },
+  "autoApplyOnStartup": true,
+  "panelPageSize": 24,
+  "wallpaperScanCacheMinutes": 5,
+  "panelLastSelectedPath": "",
+  "screens": {
+    "eDP-1": {
+      "path": "/home/andre/.local/share/Steam/steamapps/workshop/content/431960/861087035",
+      "scaling": "default"
+    }
+  },
+  "wallpaperProperties": {
+    "861087035": {
+      "schemecolor": "51,35,56"
+    },
+    "1259354518": {
+      "schemecolor": "128,128,128"
+    },
+    "2257656152": {
+      "cloudmotion": "0.05",
+      "musicvolume": "1",
+      "schemecolor": "143,170,193",
+      "snowlevel": "1",
+      "sword_lightning": "10",
+      "swordshine": "2",
+      "swordshinecolor": "255,2,192",
+      "wallpaperzoom": "1"
+    },
+    "2419477833": {
+      "fallingleaves": "1",
+      "schemecolor": "88,114,134",
+      "talonblinkinganimation": "1",
+      "talonmovementspeed": "1.25"
+    },
+    "2872312124": {
+      "schemecolor": "62,187,229"
+    },
+    "2890896793": {
+      "schemecolor": "186,111,77"
+    },
+    "3463520581": {
+      "animations": "0",
+      "bloom": "0",
+      "blurbackground": "0",
+      "cameramovement": "0",
+      "characterssize": "0",
+      "opacity": "1",
+      "particles": "0",
+      "particlesleaves": "0",
+      "schemecolor": "0,0,0"
+    },
+    "3559394417": {
+      "schemecolor": "191,131,100"
+    },
+    "3589797852": {
+      "schemecolor": "202,168,135"
+    },
+    "3687625498": {
+      "schemecolor": "76,73,53"
+    },
+    "3691397576": {
+      "schemecolor": "228,228,233"
+    },
+    "3695423784": {
+      "audiobar": "1",
+      "frame": "0",
+      "schemecolor": "4,66,172"
+    },
+    "3702651191": {
+      "schemecolor": "239,242,247"
+    },
+    "3706429481": {
+      "schemecolor": "1,1,1"
+    },
+    "3707266697": {
+      "schemecolor": "0,0,0"
+    },
+    "3711451989": {
+      "schemecolor": "110,58,63"
+    },
+    "3712502769": {
+      "schemecolor": "0,0,0"
+    },
+    "3718057452": {
+      "_7w7": "0",
+      "color": "0",
+      "disco": "1",
+      "gpuhigh": "1",
+      "nightingaleberserker": "0",
+      "ojoseyes": "1",
+      "reloj": "1",
+      "schemecolor": "1,0,1"
+    },
+    "3720782379": {
+      "bloom": "1",
+      "peso": "1",
+      "reloj": "1",
+      "schemecolor": "218,76,76"
+    }
+  },
+  "lastKnownGoodScreens": {
+    "eDP-1": {
+      "path": "/home/andre/.local/share/Steam/steamapps/workshop/content/431960/861087035",
+      "scaling": "default"
+    }
+  },
+  "runtimeRecoveryPending": false,
+  "assetsDir": ""
+}
