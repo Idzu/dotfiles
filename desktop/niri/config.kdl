@@ -83,6 +83,12 @@ window-rule {
     clip-to-geometry true
 }
 
+gestures {
+    hot-corners {
+        off
+    }
+}
+
 input {
     keyboard {
         xkb {
@@ -119,11 +125,11 @@ input {
     }
 
     mouse {
-	accel-speed 0.00004
+    accel-speed -0.65
+    accel-profile "adaptive"
         // off
         // natural-scroll
         // accel-speed 0.2
-        accel-profile "adaptive"
         // scroll-method "no-scroll"
     }
 
@@ -460,8 +466,7 @@ binds {
         spawn "qs" "-c" "noctalia-shell" "ipc" "call" "plugin:clipper" "toggle";
     }
 
-    Mod+E { spawn "dolphin"; }
-
+Mod+E { spawn "nautilus" "--new-window"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
@@ -498,8 +503,8 @@ binds {
     Mod+Q repeat=false { close-window; }
 
     Super+Shift+Q repeat=false {
-        spawn-sh "pid=$(niri msg --json focused-window | jq -r '.pid // empty'); [ -n \"$pid\" ] && kill -9 \"$pid\"";
-    }
+    spawn-sh "pid=$(xdotool getactivewindow getwindowpid 2>/dev/null); [ -z \"$pid\" ] && pid=$(niri msg --json focused-window | jq -r '.pid // empty'); [ -n \"$pid\" ] && kill -9 \"$pid\"";
+}
 
     Mod+Left  { focus-column-left; }
     Mod+Down  { focus-window-down; }
